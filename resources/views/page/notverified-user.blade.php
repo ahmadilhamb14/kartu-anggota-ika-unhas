@@ -3,9 +3,10 @@
 @section('content')
     <div class="flex flex-col w-full h-screen justify-center items-center text-center">
         <p>
-            Kartu anda belum tersedia. <br>
-            lengkapi data anda tersebih dahulu
+            {{-- Kartu anda belum tersedia. <br>
+            lengkapi data anda tersebih dahulu --}}
+            {!! $content !!}
+    
         </p>
-        <a class="btn btn-sm btn-outline btn-error mt-3" href="{{ route('edit-profile') }}">Lengkapi profile</a>
     </div>
 @endsection

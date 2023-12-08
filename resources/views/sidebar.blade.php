@@ -27,6 +27,8 @@
             @if(session('role') == 'admin')
                 <hr>
                 <li><a href="{{ route('kelola-admin') }}">Kelola admin</a></li>
+                <hr>
+                <li><a href="{{ route('verifikasi-user') }}">Verifikasi User</a></li>
             @endif
                 <hr>
                 <li><a href="{{ route('edit-profile') }}">Edit Profile</a></li>

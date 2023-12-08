@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phonenumber');
-            $table->boolean('is_active')->default(false);
+            $table->enum('is_active',['active', 'waiting', 'belum terverifikasi'])->default('belum terverifikasi');
             $table->enum('role',['member', 'admin', 'superadmin'])->default('member');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

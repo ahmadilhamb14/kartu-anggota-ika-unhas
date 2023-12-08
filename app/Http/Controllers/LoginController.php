@@ -27,10 +27,11 @@ class LoginController extends Controller
     public function auth(Request $request)
     {
         $credential = $request->only('username', 'password');
-        $role = User::where('username', $request->username)->first()->role;
         $data = User::verification($credential);
         if ($data) {
-            session(['login' => TRUE, 'data' => $credential, 'role' => $role]);
+            $is_active = User::where('username', $request->username)->first()->is_active;
+            $role = User::where('username', $request->username)->first()->role;
+            session(['login' => TRUE, 'data' => $credential, 'role' => $role, 'is_active' => $is_active]);
             return redirect('dashboard');
             // return $role;
         } else {
